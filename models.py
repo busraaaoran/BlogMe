@@ -23,6 +23,7 @@ class User(db.Model):
 
     def json(self):
         return {
+            "id": self.id,
             "slug":self.slug,
             "first_name": self.first_name,
             "last_name": self.last_name,
@@ -31,7 +32,7 @@ class User(db.Model):
             "profile_picture":self.profile_picture,
             "registration_date":(self.registration_date).isoformat(),
             "username":self.username,
-            "articles":[jsonpickle.encode(a) for a in self.articles]
+            "articles":list(json_article(a) for a in self.articles)
         }
 
 
@@ -43,15 +44,15 @@ class Category(db.Model):
     name = db.Column(db.String(50))
 
     articles = db.relationship('Article', backref='category', lazy=True)
-
+    
     def json(self):
         return {
+            "id": self.id,
             "name": self.name,
             "slug": self.slug,
-            "articles": [jsonpickle.encode(a) for a in self.articles]
+            "articles": list(json_article(a) for a in self.articles)
         }
-
-        
+     
 
 class Article(db.Model):
     __tablename__ = "article"
@@ -67,6 +68,7 @@ class Article(db.Model):
 
     def json(self):
         return {
+            "id": self.id,
             "slug": self.slug,
             "title": self.title,
             "author": self.author,

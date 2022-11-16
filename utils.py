@@ -21,7 +21,17 @@ def create_category_slug(name):
         slug = slugify(string_to_slugify + " " + get_random())
         return slug
 
-
+def json_article(article):
+        return {
+            "id": article.id,
+            "slug": article.slug,
+            "title": article.title,
+            "author": article.author,
+            "category_id": article.category_id,
+            "upload_date": (article.upload_date).isoformat(),
+            "image":article.image,
+            "content":article.content
+        }
 '''
 print(get_random())
 
