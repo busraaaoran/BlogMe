@@ -1,1 +1,61 @@
-<p>login works!</p>
+<!-- Section: Design Block -->
+<section class=" text-center text-lg-start">
+  <style>
+    .rounded-t-5 {
+      border-top-left-radius: 0rem;
+      border-top-right-radius: 0rem;
+    }
+
+    @media (min-width: 500px) {
+      .rounded-tr-lg-0 {
+        border-top-right-radius: 0;
+      }
+
+      .rounded-bl-lg-5 {
+        border-bottom-left-radius: 0rem;
+      }
+    }
+  </style>
+  <div class="w-100 card mb-3">
+    <div class="row g-2 d-flex align-items-center">
+      <div class="col-lg-4 d-none d-lg-flex">
+        <img src="https://images.pexels.com/photos/4160066/pexels-photo-4160066.jpeg" alt="Trendy Pants and Shoes"
+          class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+      </div>
+      <div class="col-lg-8">
+        <div class="card-body py-5 px-md-5">
+
+          <form>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="form2Example1" class="form-control" />
+              <label class="form-label" for="form2Example1">Username</label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" id="form2Example2" class="form-control" />
+              <label class="form-label" for="form2Example2">Password</label>
+            </div>
+
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+
+              <div class="col text-center">
+                <!-- Simple link -->
+                <a routerLink="/register">Don't have an account yet? Click to Register</a>
+              </div>
+            </div>
+
+            <div class="col text-center">
+            <!-- Submit button -->
+            <button type="button" class="btn btn-block mb-4" style="background-color: #ed4869; color:white; position:center;">Sign in</button>
+           </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->
