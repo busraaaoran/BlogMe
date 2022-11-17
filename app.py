@@ -1,6 +1,6 @@
 from flask import Flask, request
 import os
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from flask_restful import Api, Resource, abort
 from models import *
 from flask_migrate import Migrate
