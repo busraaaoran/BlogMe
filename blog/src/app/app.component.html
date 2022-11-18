@@ -57,8 +57,8 @@
                 </li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-light">Disabled</a>
+            <li class="nav-item" *ngIf="user">
+              <a class="nav-link text-light" routerLink="/profile">My Profile</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
