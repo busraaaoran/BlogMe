@@ -31,8 +31,8 @@ export class AppComponent {
     this.user = JSON.parse(sessionStorage.getItem('user')!);
 
   }
-  // ngOnChanges(){
-  //   this.user = JSON.parse(sessionStorage.getItem('user')!);
-  // }
+  ngOnChanges(){
+    this.user = JSON.parse(sessionStorage.getItem('user')!);
+  }
 
 }

@@ -11,6 +11,7 @@ import { ShowArticlesComponent } from './components/show-articles/show-articles.
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +21,17 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     AddArticleComponent,
     ShowArticlesComponent,
     AddCategoryComponent,
-    ProfileComponent
+    ProfileComponent,
+    ArticleDetailComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

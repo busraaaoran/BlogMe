@@ -12,4 +12,8 @@ export class ArticlesService {
   getArticles(){
     return this.httpClient.get(this.#url);
   }
+
+  addArticle(title:any, author:any, category_id:any, image:any, content:any){
+    return this.httpClient.post(this.#url, {title, author, category_id, image, content})
+  }
 }

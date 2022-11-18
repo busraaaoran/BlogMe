@@ -1,1 +1,67 @@
-<p>add-article works!</p>
+
+<section class="vh-50 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Add New Article</h3>
+            <form [formGroup]="articleForm" (ngSubmit)="articleData(articleForm)" autocomplete="off">
+
+              <div class="row">
+                <div class="col-md-12 mb-2 d-flex align-items-center">
+
+                  <div class="form-outline datepicker w-100">
+                    <input type="text" class="form-control form-control-lg" required name="title" id="title" formControlName="title" ngDefaultControl/>
+                    <label for="title" class="form-label"  >Title</label>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-12 mb-2 pb-2">
+
+                  <div class="form-outline">
+                    <input type="text" id="category_id" required name="category_id" class="form-control form-control-lg" formControlName="category_id" ngDefaultControl/>
+                    <label class="form-label" for="category_id"   >Category ID</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 mb-2 pb-2">
+
+                  <div class="form-outline">
+                    <input type="text" id="image" name="image" class="form-control form-control-lg" required formControlName="image" ngDefaultControl/>
+                    <label class="form-label" for="image">Image URL</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 mb-2 pb-2">
+
+                  <div class="form-outline">
+                    <input type="text" name="content" class="form-control form-control-lg" required formControlName="content" ngDefaultControl/>
+                    <label class="form-label" >Content</label>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="mt-4 pt-2 text-center">
+                <button class=" btn btn-warning btn-lg" type="submit" name="submit">ADD</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

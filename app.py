@@ -177,6 +177,8 @@ class ArticlesController(Resource):
 
         data['slug'] = create_article_slug(data['title'])
         data['upload_date'] = datetime.now()
+        if 'image' not in data.keys():
+            data['image'] = "https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg?auto=compress&cs=tinysrgb&w=600"
 
         new_article = Article(**data)
         db.session.add(new_article)

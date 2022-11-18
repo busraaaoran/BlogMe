@@ -6,20 +6,18 @@
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Registration Form</h3>
             <form [formGroup]="registerForm" (ngSubmit)="registerData(registerForm)" autocomplete="off">
-
               <div class="row">
                 <div class="col-md-6 mb-2">
 
                   <div class="form-outline">
-                    <input type="text" id="firstName" class="form-control form-control-lg" name="first_name" formControlName="first_name" ngDefaultControl/>
+                    <input type="text" id="firstName" class="form-control form-control-lg" required name="first_name" formControlName="first_name" ngDefaultControl/>
                     <label class="form-label" for="firstName" >First Name</label>
                   </div>
-
                 </div>
                 <div class="col-md-6 mb-2">
 
                   <div class="form-outline">
-                    <input type="text" id="lastName" class="form-control form-control-lg" name="last_name" formControlName="last_name" ngDefaultControl/>
+                    <input type="text" id="lastName" class="form-control form-control-lg" required name="last_name" formControlName="last_name" ngDefaultControl/>
                     <label class="form-label" for="lastName" >Last Name</label>
                   </div>
 
@@ -30,7 +28,7 @@
                 <div class="col-md-12 mb-2 d-flex align-items-center">
 
                   <div class="form-outline datepicker w-100">
-                    <input type="text" class="form-control form-control-lg"  name="username" id="username" formControlName="username" ngDefaultControl/>
+                    <input type="text" class="form-control form-control-lg" required name="username" id="username" formControlName="username" ngDefaultControl/>
                     <label for="birthdayDate" class="form-label"  >Username</label>
                   </div>
 
@@ -41,7 +39,7 @@
                 <div class="col-md-12 mb-2 pb-2">
 
                   <div class="form-outline">
-                    <input type="email" id="email" name="email" class="form-control form-control-lg" formControlName="email" ngDefaultControl/>
+                    <input type="email" id="email" name="email" required class="form-control form-control-lg" formControlName="email" ngDefaultControl/>
                     <label class="form-label" for="email"   >Email</label>
                   </div>
 
@@ -63,7 +61,7 @@
                 <div class="col-md-6 mb-2 pb-2">
 
                   <div class="form-outline">
-                    <input type="password" id="password" name="password" class="form-control form-control-lg" formControlName="password" ngDefaultControl/>
+                    <input type="password" id="password" name="password" required class="form-control form-control-lg" formControlName="password" ngDefaultControl/>
                     <label class="form-label" for="password"  >Password</label>
                   </div>
 
@@ -72,7 +70,7 @@
                 <div class="col-md-6 mb-4 pb-2">
 
                   <div class="form-outline">
-                    <input type="password" id="passwordConfirm" name="passwordConfirm"  formControlName="passwordConfirm" ngDefaultControl class="form-control form-control-lg" />
+                    <input type="password" id="passwordConfirm" name="passwordConfirm" required formControlName="passwordConfirm" ngDefaultControl class="form-control form-control-lg" />
                     <label class="form-label" for="passwordConfirm"   >Confirm Password</label>
                   </div>
 
@@ -89,7 +87,8 @@
               </div>
 
               <div class="mt-4 pt-2 text-center">
-                <input class=" btn btn-warning btn-lg" type="submit" name="submit" />
+                <button class=" btn btn-warning btn-lg" type="submit" name="submit" >SUBMIT</button>
+
               </div>
 
             </form>

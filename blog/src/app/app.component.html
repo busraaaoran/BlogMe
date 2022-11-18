@@ -35,8 +35,8 @@
                 >All Articles</a
               >
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="#">Link</a>
+            <li *ngIf="user" class="nav-item">
+              <a class="nav-link text-light" routerLink="add-article">Add Article</a>
             </li>
             <li class="nav-item dropdown">
               <a

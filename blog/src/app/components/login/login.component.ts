@@ -38,11 +38,11 @@ export class LoginComponent implements OnInit {
             sessionStorage.setItem('user', JSON.stringify(this.user));
             this.route.navigate(['profile']);
           } else {
-            alert('Lütfen giriş bilgilerinizi kontrol ediniz!');
+            alert('Please check your inputs!');
           }
         },
         error: (e) => {
-          alert('Giriş başarısız, lütfen girdilerinizi kontrol ediniz!!');
+          alert('Login failed, Check your login inputs!!');
         },
       });
   }
