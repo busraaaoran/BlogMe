@@ -35,4 +35,8 @@ export class AppComponent {
     this.user = JSON.parse(sessionStorage.getItem('user')!);
   }
 
+  logout(){
+    sessionStorage.clear();
+  }
+
 }

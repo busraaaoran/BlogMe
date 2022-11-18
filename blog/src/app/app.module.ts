@@ -12,6 +12,7 @@ import { AddCategoryComponent } from './components/add-category/add-category.com
 import { ProfileComponent } from './components/profile/profile.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ArticleDetailComponent } from './components/article-detail/article-deta
     AddCategoryComponent,
     ProfileComponent,
     ArticleDetailComponent,
+    HomeComponent,
 
   ],
   imports: [

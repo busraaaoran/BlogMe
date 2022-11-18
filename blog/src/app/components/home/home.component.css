@@ -1,0 +1,10 @@
+body{
+  background-image: url("https://images.pexels.com/photos/1450034/pexels-photo-1450034.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section{
+  height: 100%;
+}
+

@@ -54,7 +54,7 @@ export class AddArticleComponent implements OnInit {
         }
       },
       error: (e) => {
-        alert('Login failed, Check your login inputs!!');
+        alert('Adding article failed, Check your input data!!');
       },
     });
   }
