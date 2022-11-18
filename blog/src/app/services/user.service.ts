@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  constructor() { }
+  #url = 'http://localhost:5000/user/';
+
+  constructor(private httpClient: HttpClient) { }
+
+  login(username:any,password:any){
+    return this.httpClient.post(this.#url+"login", {username, password});
+  }
 }

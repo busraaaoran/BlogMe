@@ -62,7 +62,20 @@
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <a class="nav-link" routerLink="/login"
+
+            <a *ngIf="user; else notLoggedIn" class="nav-link" routerLink="/all-articles"
+              ><button
+                class="btn btn-warning me-1"
+                type="submit"
+                routerLink="/all-articles"
+                routerLinkActive="active"
+                ariaCurrentWhenActive="page"
+              >
+                Logout
+              </button></a
+            >
+            <ng-template #notLoggedIn>
+              <a  class="nav-link" routerLink="/login"
               ><button
                 class="btn btn-warning me-1"
                 type="submit"
@@ -73,6 +86,8 @@
                 Login
               </button></a
             >
+            </ng-template>
+
             <a class="nav-link" routerLink="/register"
               ><button
                 class="btn btn-warning"
@@ -88,6 +103,7 @@
         </div>
       </div>
     </nav>
+
     <router-outlet></router-outlet>
     <!-- Footer -->
     <footer class="text-center text-white" style="background-color: #070c42">

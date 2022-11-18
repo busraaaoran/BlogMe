@@ -1,5 +1,5 @@
 <!-- Section: Design Block -->
-<section class=" text-center text-lg-start" style="margin:auto;">
+<section class=" text-center text-lg-start">
   <style>
     .rounded-t-5 {
       border-top-left-radius: 0rem;
@@ -26,16 +26,16 @@
       <div class="col-lg-8">
         <div class="card-body py-5 px-md-5">
 
-          <form>
+          <form [formGroup]="loginForm" (ngSubmit)="loginData(loginForm)" autocomplete="off">
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="form2Example1" class="form-control" />
+              <input type="email" id="form2Example1" class="form-control" name="username" formControlName="username" ngDefaultControl />
               <label class="form-label" for="form2Example1">Username</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="form2Example2" class="form-control" />
+              <input type="password" id="form2Example2" class="form-control" name="password" formControlName="password" ngDefaultControl/>
               <label class="form-label" for="form2Example2">Password</label>
             </div>
 
@@ -48,9 +48,9 @@
               </div>
             </div>
 
-            <div class="col text-center">
+            <div class="row mb-4 text-center">
             <!-- Submit button -->
-            <button type="button" class="btn btn-block mb-4" style="background-color: #ed4869; color:white; position:center;">Sign in</button>
+            <button type="submit" class="btn btn-block mb-4" style="background-color: #ed4869; color:white; position:center;">Sign in</button>
            </div>
           </form>
 
