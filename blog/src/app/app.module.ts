@@ -15,6 +15,8 @@ import { ArticleDetailComponent } from './components/article-detail/article-deta
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { EditArticleComponent } from './components/edit-article/edit-article.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
+    EditArticleComponent,
+    EditProfileComponent,
 
   ],
   imports: [

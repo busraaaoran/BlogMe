@@ -18,17 +18,17 @@ export class AppComponent implements OnInit, OnChanges{
   constructor(private article_service: ArticlesService, private category_service:CategoriesService){}
 
   ngOnInit(){
-    console.log(sessionStorage.getItem("user"))
-    this.article_service.getArticles()
-    .subscribe(response => {
-      this.articles = response;
-    });
+    // console.log(sessionStorage.getItem("user"))
+    // this.article_service.getArticles()
+    // .subscribe(response => {
+    //   this.articles = response;
+    // });
 
-    this.category_service.getCategories()
-    .subscribe(response => {
-      this.categories = response;
-    })
-    this.user = JSON.parse(sessionStorage.getItem('user')!);
+    // this.category_service.getCategories()
+    // .subscribe(response => {
+    //   this.categories = response;
+    // })
+    //this.user = JSON.parse(sessionStorage.getItem('user')!);
 
   }
   ngOnChanges(){

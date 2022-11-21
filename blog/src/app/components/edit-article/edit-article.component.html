@@ -6,7 +6,7 @@
         <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Add New Article</h3>
-            <form [formGroup]="articleForm" (ngSubmit)="articleData(articleForm)" autocomplete="off">
+            <form autocomplete="off">
 
               <div class="row">
                 <div class="col-md-12 mb-2 d-flex align-items-center">
@@ -23,12 +23,8 @@
                 <div class="col-md-12 mb-2 pb-2">
 
                   <div class="form-outline">
-                    <select id="category" required name="category" class="form-control form-control-lg form-select" formControlName="category" ngDefaultControl>
-
-                      <option [ngValue]="null" disabled>Select Category</option>
-                      <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
-                    </select>
-                    <label class="form-label" for="category">Category</label>
+                    <input type="text" id="category_id" required name="category_id" class="form-control form-control-lg" formControlName="category_id" ngDefaultControl/>
+                    <label class="form-label" for="category_id"   >Category ID</label>
                   </div>
 
                 </div>
@@ -57,9 +53,8 @@
 
               </div>
 
-
               <div class="mt-4 pt-2 text-center">
-                <button [disabled]="!articleForm.valid" class=" btn btn-warning btn-lg" type="submit" name="submit">ADD</button>
+                <button class=" btn btn-warning btn-lg" type="submit" name="submit">ADD</button>
               </div>
 
             </form>
@@ -69,4 +64,5 @@
     </div>
   </div>
 </section>
+
 

@@ -6,6 +6,6 @@
     <h5 class="card-title text-center">Category: {{category.name}}</h5>
     <p class="card-text text-center">{{article.content}}</p>
     <p class="card-text text-center"><small class="text-muted">Last updated {{article.upload_date |date:'dd/MMM/YYYY'}}</small></p>
-    <button class="btn btn-warning ">EDIT ARTICLE</button>
+    <button routerLink="/edit-article/{{article.slug}}" class="btn btn-warning ">EDIT ARTICLE</button>
   </div>
 </div>

@@ -23,7 +23,7 @@ export class AddArticleComponent implements OnInit {
   ) {
     this.articleForm = this.formBuilder.group({
       title: ['', Validators.required],
-      category_id: ['', Validators.required],
+      category: ['', Validators.required],
       image: ['', Validators.maxLength(255)],
       content: ['', Validators.required],
     });
@@ -40,7 +40,7 @@ export class AddArticleComponent implements OnInit {
     this.articles_service.addArticle(
       this.articleForm.value.title,
       this.user.user.id,
-      this.articleForm.value.category_id,
+      this.articleForm.value.category,
       this.articleForm.value.image,
       this.articleForm.value.content
     ).subscribe({

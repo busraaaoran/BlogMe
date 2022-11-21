@@ -1,5 +1,5 @@
 
-<h1 class="text-bold">Welcome {{user.user.first_name}}!</h1>
+<h1 class="text-bold">Welcome {{user.first_name}}!</h1>
 <section class="vh-100">
   <div class="container h-75">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -8,14 +8,14 @@
           <div class="row g-0">
             <div class="col-md-4 gradient-custom text-center text-white"
               style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-              <img *ngIf="user.user.profile_picture else emptyPicture" src="{{user.user.profile_picture}}"
+              <img *ngIf="user.profile_picture else emptyPicture" src="{{user.profile_picture}}"
                 alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
               <ng-template #emptyPicture>
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
                 alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
               </ng-template>
-              <h5>{{user.user.first_name}} {{user.user.last_name}}</h5>
-              <p>{{user.user.username}}</p>
+              <h5>{{user.first_name}} {{user.last_name}}</h5>
+              <p>{{user.username}}</p>
               <i class="far fa-edit mb-5"></i>
             </div>
             <div class="col-md-8">
@@ -25,11 +25,11 @@
                 <div class="row pt-1">
                   <div class="col-6 mb-3">
                     <h6>Email</h6>
-                    <p class="text-muted">{{user.user.email}}</p>
+                    <p class="text-muted">{{user.email}}</p>
                   </div>
                   <div class="col-6 mb-3">
                     <h6>Phone</h6>
-                    <p class="text-muted">{{user.user.phone}}</p>
+                    <p class="text-muted">{{user.phone}}</p>
                   </div>
                 </div>
                 <h6>About</h6>
@@ -37,7 +37,7 @@
                 <div class="row pt-1">
                   <div class="col-6 mb-3">
                     <h6>Registration Date</h6>
-                    <p class="text-muted">{{user.user.registration_date |date: "dd/MMM/YYYY"}}</p>
+                    <p class="text-muted">{{user.registration_date |date: "dd/MMM/YYYY"}}</p>
                   </div>
                   <div class="col-6 mb-1">
                     <h6>Articles</h6>
@@ -56,9 +56,9 @@
     </div>
   </div>
 </section>
-<h1 class="text-bold">{{user.user.first_name}}'s Articles</h1>
+<h1 class="text-bold">{{user.first_name}}'s Articles</h1>
 <div class="row row-cols-1 row-cols-md-3 g-4 " style="margin:auto;">
-  <div *ngFor="let article of user.user.articles" class="col">
+  <div *ngFor="let article of user.articles" class="col">
     <div class="card text-center">
       <img src="{{article.image}}" class="card-img-top" alt="...">
       <div class="card-body">

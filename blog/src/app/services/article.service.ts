@@ -12,4 +12,6 @@ export class ArticleService {
   getArticleDetails(slug:any){
     return this.httpClient.get(this.#url+slug);
   }
+
+
 }

@@ -11,32 +11,33 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class RegisterComponent implements OnInit {
 
-  registerForm : FormGroup;
+  registerForm!: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
     private route: Router,
     private userService: UsersService)
    {
-      this.registerForm = this.formBuilder.group({
-        first_name: ['', [Validators.required, Validators.maxLength(10)]],
-        last_name: ['', Validators.required],
-        username: ['', Validators.required],
-        email: ['', [Validators.email, Validators.required]],
-        phone: ['', Validators.maxLength(12)],
-        password: ['', [Validators.required,Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")]],
-        passwordConfirm: ['', [Validators.required,Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")]]
-      })
 
-      this.registerForm.addValidators(
-        createCompareValidator(
-          this.registerForm.get('password'),
-          this.registerForm.get('passwordConfirm')
-        )
-      );
    }
 
   ngOnInit(): void {
+    this.registerForm = this.formBuilder.group({
+      first_name: ['', [Validators.required, Validators.maxLength(10)]],
+      last_name: ['', Validators.required],
+      username: ['', Validators.required],
+      email: ['', [Validators.email, Validators.required]],
+      phone: ['', Validators.maxLength(12)],
+      password: ['', [Validators.required,Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")]],
+      passwordConfirm: ['', [Validators.required,Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")]]
+    })
+
+    this.registerForm.addValidators(
+      createCompareValidator(
+        this.registerForm.get('password'),
+        this.registerForm.get('passwordConfirm')
+      )
+    );
   }
 
   registerData(form: any){

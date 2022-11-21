@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,14 +10,19 @@ export class ProfileComponent implements OnInit {
 
   user:any;
   numberOfArticles:any;
-  constructor() {
-
-   }
+  constructor(private userService:UserService) {}
 
   ngOnInit(){
     console.log(sessionStorage.getItem('user'));
-    this.user = JSON.parse(sessionStorage.getItem('user')!);
-    this.numberOfArticles = this.user.user.articles.length;
+    let user_ = JSON.parse(sessionStorage.getItem('user')!);
+    if(user_){
+      this.userService.getUser(user_.user.slug).subscribe(response => {
+        console.log(response);
+        this.user = response;
+        this.numberOfArticles = this.user.articles.length;
+      })
+    }
+
   }
 
 }

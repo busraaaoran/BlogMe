@@ -87,7 +87,7 @@
               </div>
 
               <div class="mt-4 pt-2 text-center">
-                <button class=" btn btn-warning btn-lg" type="submit" name="submit" >SUBMIT</button>
+                <button [disabled]="!registerForm.valid" class=" btn btn-warning btn-lg" type="submit" name="submit" >SUBMIT</button>
 
               </div>
 

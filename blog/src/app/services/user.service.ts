@@ -14,5 +14,9 @@ export class UserService {
     return this.httpClient.post(this.#url+"login", {username, password});
   }
 
+  getUser(slug:any){
+    return this.httpClient.get(this.#url+slug);
+  }
+
 
 }
