@@ -19,13 +19,13 @@ export class RegisterComponent implements OnInit {
     private userService: UsersService)
    {
       this.registerForm = this.formBuilder.group({
-        first_name: ['', Validators.required],
+        first_name: ['', [Validators.required, Validators.maxLength(10)]],
         last_name: ['', Validators.required],
         username: ['', Validators.required],
-        email: ['', Validators.email],
+        email: ['', [Validators.email, Validators.required]],
         phone: ['', Validators.maxLength(12)],
-        password: formBuilder.control(['', Validators.compose([Validators.required,Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")])]),
-        passwordConfirm: formBuilder.control(['', Validators.required])
+        password: ['', [Validators.required,Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")]],
+        passwordConfirm: ['', [Validators.required,Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")]]
       })
 
       this.registerForm.addValidators(
