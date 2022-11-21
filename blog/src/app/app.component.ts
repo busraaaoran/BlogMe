@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { ArticlesService } from './services/articles.service';
 import { CategoriesService } from './services/categories.service';
 import { UserService } from './services/user.service';
@@ -9,7 +9,7 @@ import { UserService } from './services/user.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnChanges{
   title = 'blog';
   user:any;
   articles:any;
@@ -35,8 +35,6 @@ export class AppComponent {
     this.user = JSON.parse(sessionStorage.getItem('user')!);
   }
 
-  logout(){
-    sessionStorage.clear();
-  }
+
 
 }

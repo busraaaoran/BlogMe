@@ -46,4 +46,10 @@ export class LoginComponent implements OnInit {
         },
       });
   }
+
+  // appReload(){
+  //   if(sessionStorage.getItem("user")){
+  //     this.route.navigate(['/'])
+  //   }
+  // }
 }

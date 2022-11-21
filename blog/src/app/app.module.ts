@@ -13,6 +13,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
 import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { HomeComponent } from './components/home/home.component';
     ProfileComponent,
     ArticleDetailComponent,
     HomeComponent,
+    NavbarComponent,
+    FooterComponent,
 
   ],
   imports: [
