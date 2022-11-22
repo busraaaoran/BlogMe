@@ -1,1 +1,61 @@
-<p>edit-profile works!</p>
+<section class="vh-50 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Edit Your Profile</h3>
+            <form [formGroup]="editProfileForm" (ngSubmit)="editProfileData(editProfileForm)" autocomplete="off">
+              <div class="row">
+                <div class="col-md-6 mb-2">
+
+                  <div class="form-outline">
+                    <input type="text" id="firstName" class="form-control form-control-lg" required name="first_name" formControlName="first_name" ngDefaultControl/>
+                    <label class="form-label" for="firstName" >First Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-2">
+
+                  <div class="form-outline">
+                    <input type="text" id="lastName" class="form-control form-control-lg" required name="last_name" formControlName="last_name" ngDefaultControl/>
+                    <label class="form-label" for="lastName" >Last Name</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 mb-2 pb-2">
+
+                  <div class="form-outline">
+                    <input type="tel" id="phone" name="phone" class="form-control form-control-lg" formControlName="phone" ngDefaultControl/>
+                    <label class="form-label" for="phone">Phone Number</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 mb-2 pb-2">
+
+                  <div class="form-outline">
+                    <input type="text" id="profile_picture" name="profile_picture" required class="form-control form-control-lg" formControlName="profile_picture" ngDefaultControl/>
+                    <label class="form-label" for="profile_picture"   >Profile Picture URL</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="mt-4 pt-2 text-center">
+                <button [disabled]="!editProfileForm.valid" class=" btn btn-warning btn-lg" type="submit" name="submit" >SAVE CHANGES</button>
+
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

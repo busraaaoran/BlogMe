@@ -36,7 +36,7 @@ export class AddArticleComponent implements OnInit {
   }
 
   articleData(form: any) {
-    console.log(this.articleForm.value);
+    //console.log(this.articleForm.value);
     this.articles_service.addArticle(
       this.articleForm.value.title,
       this.user.user.id,

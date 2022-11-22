@@ -131,7 +131,7 @@ class SingleUserView(Resource):
             user.first_name = data['first_name']
         if 'last_name' in data.keys():
             user.last_name = data['last_name']
-        user.slug = create_slug(user.first_name, user.last_name)
+        #user.slug = create_slug(user.first_name, user.last_name)
         if 'phone' in data.keys():
             user.phone = data['phone']
         if 'email' in data.keys():

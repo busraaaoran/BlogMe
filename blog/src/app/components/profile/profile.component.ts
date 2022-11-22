@@ -13,11 +13,11 @@ export class ProfileComponent implements OnInit {
   constructor(private userService:UserService) {}
 
   ngOnInit(){
-    console.log(sessionStorage.getItem('user'));
+    //console.log(sessionStorage.getItem('user'));
     let user_ = JSON.parse(sessionStorage.getItem('user')!);
     if(user_){
       this.userService.getUser(user_.user.slug).subscribe(response => {
-        console.log(response);
+        //console.log(response);
         this.user = response;
         this.numberOfArticles = this.user.articles.length;
       })

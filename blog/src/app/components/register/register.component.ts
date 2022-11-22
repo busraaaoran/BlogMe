@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
   }
 
   registerData(form: any){
-    console.log(this.registerForm.value)
+    //console.log(this.registerForm.value)
     this.userService.addUser(
       this.registerForm.value.first_name,
       this.registerForm.value.last_name,
