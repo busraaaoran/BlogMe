@@ -18,5 +18,12 @@ export class UserService {
     return this.httpClient.get(this.#url+slug);
   }
 
+  updateUser(slug:any, first_name:any, last_name:any, phone:any, profile_picture:any){
+    return this.httpClient.put(this.#url+slug, {first_name, last_name, phone, profile_picture});
+  }
+
+  deleteUser(slug:any){
+    return this.httpClient.delete(this.#url+slug);
+  }
 
 }
