@@ -158,7 +158,8 @@ class SingleUserView(Resource):
         db.session.delete(user)
         db.session.commit()
 
-        return {"message": f"{user.id} id numaralı kullanıcı silindi!"}
+        return {"message": f"{user.id} id numaralı kullanıcı silindi!",
+                "success": True}
 
 
 class ArticlesController(Resource):
@@ -228,7 +229,8 @@ class SingleArticleView(Resource):
 
         db.session.delete(article)
         db.session.commit()
-        return {"message": f"{article.id} id numaralı makale silindi!!"}
+        return {"message": f"{article.id} id numaralı makale silindi!!",
+                "success": True}
 
 
 class LoginView(Resource):

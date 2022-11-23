@@ -6,6 +6,7 @@
     <h5 class="card-title text-center">Category: {{category.name}}</h5>
     <p class="card-text text-center">{{article.content}}</p>
     <p class="card-text text-center"><small class="text-muted">Last updated {{article.upload_date |date:'dd/MMM/YYYY'}}</small></p>
-    <button routerLink="/edit-article/{{article.slug}}" class="btn btn-warning ">EDIT ARTICLE</button>
+    <button *ngIf="user && user.user.id == article.author" routerLink="/edit-article/{{article.slug}}" class="btn btn-warning me-1">EDIT ARTICLE</button>
+    <button (click)="deleteArticle(article.slug)" *ngIf="user && user.user.id == article.author" class="btn btn-danger me-1">DELETE ARTICLE</button>
   </div>
 </div>

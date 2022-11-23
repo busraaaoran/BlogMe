@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgConfirmService } from 'ng-confirm-box';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -10,7 +12,8 @@ export class ProfileComponent implements OnInit {
 
   user:any;
   numberOfArticles:any;
-  constructor(private userService:UserService) {}
+  deleteInfo:any;
+  constructor(private userService:UserService, private confirmService:NgConfirmService, private route:Router) {}
 
   ngOnInit(){
     //console.log(sessionStorage.getItem('user'));
@@ -23,6 +26,24 @@ export class ProfileComponent implements OnInit {
       })
     }
 
+  }
+
+  deleteUser(slug:any){
+    this.confirmService.showConfirm("Are you really sure to delete the account?", () => {
+      this.userService.deleteUser(slug).subscribe(response => {
+        this.deleteInfo = response;
+        if(this.deleteInfo.success){
+          sessionStorage.clear();
+          this.route.navigate(['/all-articles']);
+        }
+        else{
+          alert("Failed to delete user!!");
+        }
+      })
+    },
+    () => {
+      this.confirmService.closeConfirm();
+    })
   }
 
 }

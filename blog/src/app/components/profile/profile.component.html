@@ -45,8 +45,8 @@
                   </div>
                 </div>
                 <div class="d-flex justify-content-start">
-                  <a routerLink="/edit-profile/{{user.slug}}"><button class="btn btn-warning me-2">Edit Profile</button></a>
-                  <a href="#!"><button class="btn btn-danger me-2">Delete Account</button></a>
+                  <button routerLink="/edit-profile/{{user.slug}}" class="btn btn-warning me-2">Edit Profile</button>
+                  <button (click)="deleteUser(user.slug)" class="btn btn-danger me-2">Delete Account</button>
                 </div>
               </div>
             </div>
