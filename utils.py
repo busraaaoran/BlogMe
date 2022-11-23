@@ -32,11 +32,3 @@ def json_article(article):
             "image":article.image,
             "content":article.content
         }
-'''
-print(get_random())
-
-txt = "Büşra Oran"
-r = slugify(txt + " "+ get_random())
-print(r)
-print(type(r))
-'''
