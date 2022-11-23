@@ -178,7 +178,7 @@ class ArticlesController(Resource):
 
         data['slug'] = create_article_slug(data['title'])
         data['upload_date'] = datetime.now()
-        if 'image' not in data.keys():
+        if 'image' not in data.keys() or len(data['image']) == 0:
             data['image'] = "https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg?auto=compress&cs=tinysrgb&w=600"
 
         new_article = Article(**data)
@@ -204,13 +204,13 @@ class SingleArticleView(Resource):
         if 'author' in data.keys():
             abort(400, message="Makalenin yazarı değiştirilemez!!")
         if 'title' in data.keys():
-            article_ = Article.query.filter_by(
-                title=data['title'], author=article.author).first()
-            if article_:
-                abort(
-                    400, message="Zaten aynı başlıkta bir makaleniz var, lütfen değiştiriniz!")
+            # article_ = Article.query.filter_by(
+            #     title=data['title']).first()
+            # if article_ and article_.author != article.author:
+            #     abort(
+            #         400, message="Zaten aynı başlıkta bir makale var, lütfen başlığı değiştiriniz!")
             article.title = data['title']
-            article.slug = create_article_slug(data['title'])
+            #article.slug = create_article_slug(data['title'])
         if 'category_id' in data.keys():
             article.category_id = data['category_id']
         article.upload_date = datetime.now()

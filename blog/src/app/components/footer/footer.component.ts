@@ -13,7 +13,7 @@ export class FooterComponent implements OnInit {
   }
 
   viewResume(){
-    window.open('blog/src/app/components/footer/resume.pdf');
+    window.open('/footer/resume.pdf');
   }
 
 }
