@@ -12,4 +12,8 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  viewResume(){
+    window.open('blog/src/app/components/footer/resume.pdf');
+  }
+
 }

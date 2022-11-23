@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'add-article', component: AddArticleComponent},
   {path: 'article-details/:slug', component: ArticleDetailComponent},
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'edit-article/:slug', component: EditArticleComponent},
   {path: 'edit-profile/:slug', component: EditProfileComponent}
 ];
